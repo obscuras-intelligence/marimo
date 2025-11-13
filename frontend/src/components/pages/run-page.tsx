@@ -4,8 +4,6 @@ import { Panel, PanelGroup } from "react-resizable-panels";
 import type { AppConfig } from "@/core/config/config-schema";
 import { Constants } from "@/core/constants";
 import { RunApp } from "@/core/run-app";
-import { isStaticNotebook } from "@/core/static/static-state";
-import { isWasm } from "@/core/wasm/utils";
 import marimoIcon from "../../assets/icon-32x32.png";
 import { ContextAwarePanel } from "../editor/chrome/panels/context-aware-panel/context-aware-panel";
 import { PanelsWrapper } from "../editor/chrome/wrapper/panels";
@@ -15,7 +13,7 @@ interface Props {
   appConfig: AppConfig;
 }
 
-const showWatermark = isWasm() || isStaticNotebook();
+const showWatermark = false;
 
 const RunPage = (props: Props) => {
   return (
